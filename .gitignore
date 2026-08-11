@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# fotos originales sin procesar (las versiones usadas en el sitio viven en public/images)
+/paulé-fotos/
