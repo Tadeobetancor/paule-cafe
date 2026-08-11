@@ -32,7 +32,7 @@ export default function CategoryTabs() {
 
   return (
     <div className="sticky top-[var(--navbar-h)] z-30 w-full border-b border-line bg-cream/95 px-5 backdrop-blur-sm sm:px-8">
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-[var(--container-max)]">
         <div ref={listRef} className="no-scrollbar flex gap-2 overflow-x-auto pt-3 pb-1">
           {menuCategories.map((category) => {
             const id = `cat-${category.id}`;
@@ -57,8 +57,11 @@ export default function CategoryTabs() {
           })}
         </div>
 
+        {/* Sin sm:hidden a propósito: con 10 categorías la lista desborda
+            incluso en desktop ancho (1920px), así que el aviso de "hay más"
+            tiene que verse en cualquier tamaño, no sólo en mobile. */}
         <div
-          className={`grid overflow-hidden transition-[grid-template-rows] duration-300 ease-out sm:hidden ${
+          className={`grid overflow-hidden transition-[grid-template-rows] duration-300 ease-out ${
             canScrollRight ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
           }`}
         >

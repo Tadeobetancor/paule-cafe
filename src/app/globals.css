@@ -21,6 +21,14 @@
      solo el fallback para el primer render, antes de que el observer corra. */
   --navbar-h: 72px;
   --tabs-h: 63px;
+
+  /* Ancho del contenedor principal. Fluido en vez de un max-w fijo: en
+     mobile/tablet el max-width nunca se "toca" (el viewport ya es más
+     angosto), así que esto no afecta esos tamaños. Recién a partir de
+     ~1300px de viewport empieza a crecer más allá de los ~1150px de antes,
+     hasta un techo de 1460px para que en monitores enormes no se vuelva
+     desmedido. Referencia: ~1180px @1366, ~1215px @1440, ~1450px @1920. */
+  --container-max: clamp(71.9rem, 49vw + 31.9rem, 91.25rem);
 }
 
 @theme inline {

@@ -20,7 +20,7 @@ export default function CombosSpotlight() {
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_10%,rgba(146,179,162,0.14),transparent_45%),radial-gradient(circle_at_85%_90%,rgba(32,77,68,0.35),transparent_50%)]" />
 
-      <div className="relative mx-auto max-w-6xl px-5 sm:px-8">
+      <div className="relative mx-auto max-w-[var(--container-max)] px-5 sm:px-8">
         <Reveal>
           <SectionHeading
             eyebrow="Rinde más, sabe mejor"

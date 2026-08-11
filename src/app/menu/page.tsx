@@ -17,8 +17,8 @@ export default function MenuPage() {
     <>
       <MenuHeader />
       <main className="flex-1">
-        <div className="mx-auto max-w-6xl px-5 pt-8 pb-3 text-center sm:px-8 sm:pt-10">
-          <h1 className="font-display text-3xl leading-tight font-medium text-espresso sm:text-4xl">
+        <div className="mx-auto max-w-[var(--container-max)] px-5 pt-8 pb-3 text-center sm:px-8 sm:pt-10">
+          <h1 className="font-display text-3xl leading-tight font-medium text-espresso sm:text-4xl lg:text-[clamp(2.25rem,0.98vw+1.62rem,2.8rem)]">
             Carta completa
           </h1>
         </div>

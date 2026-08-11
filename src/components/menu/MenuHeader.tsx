@@ -18,7 +18,7 @@ export default function MenuHeader() {
       ref={headerRef}
       className="sticky top-0 z-50 border-b border-line bg-cream/95 backdrop-blur-sm [transform:translateZ(0)]"
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3 sm:px-8">
+      <div className="mx-auto flex max-w-[var(--container-max)] items-center justify-between px-5 py-3 sm:px-8">
         <Link
           href="/"
           className="inline-flex items-center gap-1.5 py-1 text-sm font-medium text-charcoal-soft transition-colors hover:text-terracotta"

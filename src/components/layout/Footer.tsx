@@ -13,7 +13,7 @@ const links = [
 export default function Footer() {
   return (
     <footer className="border-t border-line bg-cream-soft pt-14 pb-28 md:pb-14">
-      <div className="mx-auto flex max-w-6xl flex-col gap-10 px-5 sm:px-8 md:flex-row md:items-start md:justify-between">
+      <div className="mx-auto flex max-w-[var(--container-max)] flex-col gap-10 px-5 sm:px-8 md:flex-row md:items-start md:justify-between">
         <div className="max-w-xs">
           <Image
             src="/paule-logo-green.png"
@@ -50,7 +50,7 @@ export default function Footer() {
         </nav>
       </div>
 
-      <div className="mx-auto mt-10 max-w-6xl border-t border-line px-5 pt-6 text-xs text-charcoal-soft/70 sm:px-8">
+      <div className="mx-auto mt-10 max-w-[var(--container-max)] border-t border-line px-5 pt-6 text-xs text-charcoal-soft/70 sm:px-8">
         <p>© {new Date().getFullYear()} Paulé Café — Hurlingham, Buenos Aires.</p>
       </div>
     </footer>

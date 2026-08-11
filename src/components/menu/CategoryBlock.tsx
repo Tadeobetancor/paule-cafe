@@ -41,7 +41,7 @@ export default function CategoryBlock({ category }: CategoryBlockProps) {
 
       {category.products && category.products.length > 0 && (
         <Reveal>
-          <div className="rounded-2xl border border-line bg-cream-soft/60 px-5 sm:px-6 lg:columns-2 lg:gap-x-10">
+          <div className="rounded-2xl border border-line bg-cream-soft/60 px-5 sm:px-6 md:columns-2 md:gap-x-10">
             {category.products.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
@@ -56,7 +56,7 @@ export default function CategoryBlock({ category }: CategoryBlockProps) {
               <p className="mb-3 text-xs font-semibold tracking-[0.2em] text-terracotta uppercase">
                 {group.name}
               </p>
-              <div className="rounded-2xl border border-line bg-cream-soft/60 px-5 sm:px-6 lg:columns-2 lg:gap-x-10">
+              <div className="rounded-2xl border border-line bg-cream-soft/60 px-5 sm:px-6 md:columns-2 md:gap-x-10">
                 {group.products.map((product) => (
                   <ProductCard key={product.id} product={product} />
                 ))}

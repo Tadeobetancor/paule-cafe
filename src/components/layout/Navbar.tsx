@@ -46,7 +46,7 @@ export default function Navbar() {
           incluyera el dropdown mobile, abrirlo infla la variable y ese valor
           inflado queda "pegado" en el scroll-margin-top del destino cuando
           se toca un link, dejando un salto/hueco enorme antes de la sección. */}
-      <nav ref={headerRef} className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3 sm:px-8">
+      <nav ref={headerRef} className="mx-auto flex max-w-[var(--container-max)] items-center justify-between px-5 py-3 sm:px-8 lg:py-4">
         <a href="#inicio" className="shrink-0" onClick={() => setOpen(false)} aria-label="Paulé Café — Inicio">
           <Image
             src={solid ? "/paule-logo-green.png" : "/paule-logo-cream.png"}
@@ -54,16 +54,16 @@ export default function Navbar() {
             width={140}
             height={43}
             priority
-            className="h-8 w-auto sm:h-9"
+            className="h-8 w-auto sm:h-9 lg:h-10"
           />
         </a>
 
-        <ul className="hidden items-center gap-8 md:flex">
+        <ul className="hidden items-center gap-8 md:flex lg:gap-9">
           {links.map((link) => (
             <li key={link.id}>
               <a
                 href={link.href}
-                className={`text-sm font-medium tracking-wide transition-colors ${
+                className={`text-sm font-medium tracking-wide transition-colors lg:text-base ${
                   activeId === link.id
                     ? solid
                       ? "text-terracotta"
@@ -80,7 +80,7 @@ export default function Navbar() {
         </ul>
 
         <div className="hidden md:block">
-          <Button href="/menu" variant="primary" className="px-5 py-2.5 text-xs">
+          <Button href="/menu" variant="primary" className="px-5 py-2.5 text-xs lg:px-6 lg:py-3 lg:text-sm">
             Ver Menú
           </Button>
         </div>
