@@ -9,7 +9,7 @@ const aboutCopy =
 
 export default function About() {
   return (
-    <section id="nosotros" className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
+    <section id="nosotros" className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
       <div className="grid items-center gap-10 md:grid-cols-2 md:gap-16">
         <Reveal>
           <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl sm:aspect-[5/4] md:aspect-[4/5]">

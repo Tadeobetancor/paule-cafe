@@ -21,7 +21,6 @@
      solo el fallback para el primer render, antes de que el observer corra. */
   --navbar-h: 72px;
   --tabs-h: 63px;
-  --mobilebar-h: 84px;
 }
 
 @theme inline {
@@ -84,9 +83,8 @@ section[id] {
   scroll-margin-top: var(--navbar-h);
 }
 
-/* #menu (QuickCategories) has the sticky category-tabs bar directly above
-   it, so it needs the extra clearance too. */
-#menu,
+/* Category sections/products sit directly below the sticky category-tabs
+   bar (in /menu), so they need the extra clearance on top of the navbar. */
 section[id^="cat-"],
 [id^="producto-"] {
   scroll-margin-top: calc(var(--navbar-h) + var(--tabs-h));

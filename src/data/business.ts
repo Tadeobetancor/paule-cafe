@@ -27,8 +27,8 @@ export const business = {
   whatsappNumber: "5491168932248",
   whatsappMessage: "Hola! Quería consultar por Paulé Café.",
 
+  // Sólo se usa en el structured data (schema.org) para SEO, no se muestra en pantalla.
   priceRange: "$10.000 - $20.000",
-  priceRangeLabel: "$10.000 – $20.000 por persona",
 
   hoursToday: "Abierto — cierra a las 20:00 hs.",
   weeklyHours: [
@@ -42,8 +42,8 @@ export const business = {
   ] satisfies DayHours[],
 
   social: {
-    // TODO: agregar el usuario real de Instagram de Paulé Café.
-    instagram: "",
+    instagram: "https://www.instagram.com/paulecafe/",
+    instagramHandle: "@paulecafe",
     whatsapp: "",
   },
 

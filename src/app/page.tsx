@@ -3,13 +3,10 @@ import MobileMenuBar from "@/components/layout/MobileMenuBar";
 import WhatsAppFloatingButton from "@/components/layout/WhatsAppFloatingButton";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
-import CategoryTabs from "@/components/menu/CategoryTabs";
-import QuickCategories from "@/components/sections/QuickCategories";
-import CombosSpotlight from "@/components/sections/CombosSpotlight";
-import MenuSection from "@/components/sections/MenuSection";
-import CoffeePicker from "@/components/sections/CoffeePicker";
+import CategoryGrid from "@/components/sections/CategoryGrid";
 import About from "@/components/sections/About";
 import Location from "@/components/sections/Location";
+import Contact from "@/components/sections/Contact";
 
 export default function Home() {
   return (
@@ -17,15 +14,10 @@ export default function Home() {
       <Navbar />
       <main className="flex-1">
         <Hero />
-        <div className="relative">
-          <CategoryTabs />
-          <QuickCategories />
-          <CombosSpotlight />
-          <MenuSection />
-        </div>
-        <CoffeePicker />
+        <CategoryGrid />
         <About />
         <Location />
+        <Contact />
       </main>
       <Footer />
       <MobileMenuBar />

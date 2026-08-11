@@ -8,7 +8,6 @@ import Button from "@/components/ui/Button";
 
 const links = [
   { href: "#inicio", label: "Inicio", id: "inicio" },
-  { href: "#menu", label: "Menú", id: "menu" },
   { href: "#nosotros", label: "Nosotros", id: "nosotros" },
   { href: "#ubicacion", label: "Ubicación", id: "ubicacion" },
   { href: "#contacto", label: "Contacto", id: "contacto" },
@@ -39,12 +38,15 @@ export default function Navbar() {
 
   return (
     <header
-      ref={headerRef}
       className={`fixed inset-x-0 top-0 z-50 [transform:translateZ(0)] transition-colors duration-300 ${
         solid ? "bg-cream/95 shadow-sm backdrop-blur-sm" : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3 sm:px-8">
+      {/* --navbar-h se mide sólo de esta barra (no del header completo): si
+          incluyera el dropdown mobile, abrirlo infla la variable y ese valor
+          inflado queda "pegado" en el scroll-margin-top del destino cuando
+          se toca un link, dejando un salto/hueco enorme antes de la sección. */}
+      <nav ref={headerRef} className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3 sm:px-8">
         <a href="#inicio" className="shrink-0" onClick={() => setOpen(false)} aria-label="Paulé Café — Inicio">
           <Image
             src={solid ? "/paule-logo-green.png" : "/paule-logo-cream.png"}
@@ -78,7 +80,7 @@ export default function Navbar() {
         </ul>
 
         <div className="hidden md:block">
-          <Button href="#menu" variant="primary" className="px-5 py-2.5 text-xs">
+          <Button href="/menu" variant="primary" className="px-5 py-2.5 text-xs">
             Ver Menú
           </Button>
         </div>
@@ -130,7 +132,7 @@ export default function Navbar() {
             ))}
             <li className="mt-2">
               <Button
-                href="#menu"
+                href="/menu"
                 variant="primary"
                 className="w-full"
                 onClick={() => setOpen(false)}

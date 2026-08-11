@@ -6,7 +6,7 @@ import { business } from "@/data/business";
 
 export default function Location() {
   return (
-    <section id="ubicacion" className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
+    <section id="ubicacion" className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
       <Reveal>
         <SectionHeading
           eyebrow="Visitanos"

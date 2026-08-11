@@ -1,4 +1,5 @@
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "react";
+import Link from "next/link";
 
 const base =
   "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium tracking-wide transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold";
@@ -41,6 +42,15 @@ export default function Button({
     const { href, ...rest } = props as AnchorHTMLAttributes<HTMLAnchorElement> & {
       href: string;
     };
+    // Rutas internas (empiezan con "/") navegan vía next/link para transición
+    // de cliente; anclas (#) y links externos siguen siendo <a> normal.
+    if (href.startsWith("/")) {
+      return (
+        <Link href={href} className={classes} {...rest}>
+          {children}
+        </Link>
+      );
+    }
     return (
       <a href={href} className={classes} {...rest}>
         {children}
