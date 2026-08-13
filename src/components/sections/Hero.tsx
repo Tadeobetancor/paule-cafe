@@ -3,11 +3,11 @@ import Reveal from "@/components/ui/Reveal";
 import Button from "@/components/ui/Button";
 import { business } from "@/data/business";
 
-// Otras opciones de tagline, por si preferís cambiarla más adelante:
-// "Un buen café no se apura."
-// "Café de especialidad, hecho para quedarte."
-// "Acá el café se toma con tiempo."
-const heroTagline = "Buen café, buena mesa y ganas de quedarte.";
+// Versión corta de business.hoursToday para el Hero (info secundaria, no
+// queremos la frase completa acá). Si cambia la redacción de hoursToday en
+// data/business.ts y el patrón deja de matchear, el .replace no encuentra
+// nada y devuelve el string original sin romper nada — solo no se acorta.
+const heroStatus = business.hoursToday.replace("— cierra a las", "· hasta").replace(/\.$/, "");
 
 export default function Hero() {
   return (
@@ -36,37 +36,40 @@ export default function Hero() {
         </Reveal>
 
         <Reveal delay={80}>
-          <h1 className="mt-3">
+          <h1 className="mt-4 lg:mt-5">
+            {/* El PNG tiene ~4.1% de relleno transparente a la izquierda
+                (medido con PIL) antes de que arranque el trazo de la "P" —
+                sin este ajuste, el logo queda corrido respecto del texto
+                de arriba aunque ambos partan del mismo borde del contenedor. */}
             <Image
               src="/paule-logo-cream.png"
               alt="Paulé Café"
               width={420}
               height={128}
               priority
-              className="h-[clamp(4.5rem,19vw,5.5rem)] w-auto sm:h-24 md:h-28 lg:h-[clamp(7rem,5vw+3.6rem,10rem)]"
+              className="h-[clamp(3.25rem,14vw,4rem)] w-auto -translate-x-[4.1%] sm:h-16 md:h-20 lg:h-[clamp(5.25rem,3.5vw+2.8rem,7rem)]"
             />
           </h1>
         </Reveal>
 
-        <Reveal delay={160}>
-          <p className="mt-4 max-w-xs text-base leading-relaxed text-cream/80 sm:max-w-sm sm:text-lg lg:max-w-md lg:text-xl">
-            {heroTagline}
-          </p>
-        </Reveal>
-
-        <Reveal delay={200} className="mt-4 flex items-center gap-2 text-sm text-cream/75 lg:mt-5 lg:text-base">
+        <Reveal delay={160} className="mt-5 flex items-center gap-2 text-xs text-cream/65 lg:mt-6 lg:text-sm">
           <span className="h-1.5 w-1.5 rounded-full bg-gold" aria-hidden="true" />
-          {business.hoursToday}
+          {heroStatus}
         </Reveal>
 
-        <Reveal delay={280} className="mt-8 flex flex-wrap items-center gap-x-7 gap-y-3 lg:mt-10">
+        <Reveal delay={240} className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 lg:mt-10">
           <Button href="/menu" variant="primary" className="px-8 py-3.5 text-sm lg:px-10 lg:py-4 lg:text-base">
             Ver el Menú
           </Button>
           <a
             href="#ubicacion"
-            className="text-sm font-medium text-cream/70 underline-offset-4 transition-colors hover:text-cream hover:underline lg:text-base"
+            className="group inline-flex items-center gap-2.5 text-sm font-medium text-cream/80 transition-colors hover:text-cream lg:text-base"
           >
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-cream/40 transition-colors group-hover:border-cream/70 group-hover:bg-cream/10 lg:h-10 lg:w-10">
+              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
+                <path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Zm0-8.8a2.7 2.7 0 1 0 0-5.4 2.7 2.7 0 0 0 0 5.4Z" />
+              </svg>
+            </span>
             Cómo llegar
           </a>
         </Reveal>
