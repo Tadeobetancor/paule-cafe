@@ -61,17 +61,18 @@ export default function Hero() {
           <Button href="/menu" variant="primary" className="px-8 py-3.5 text-sm lg:px-10 lg:py-4 lg:text-base">
             Ver el Menú
           </Button>
-          <a
+          <Button
             href="#ubicacion"
-            className="group inline-flex items-center gap-2.5 text-sm font-medium text-cream/80 transition-colors hover:text-cream lg:text-base"
+            variant="secondary-dark"
+            className="gap-2.5 !py-2 pr-6 pl-2 text-sm lg:!py-2.5 lg:pr-8 lg:pl-2.5 lg:text-base"
           >
-            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-cream/40 transition-colors group-hover:border-cream/70 group-hover:bg-cream/10 lg:h-10 lg:w-10">
+            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-cream/15 lg:h-9 lg:w-9">
               <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
                 <path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Zm0-8.8a2.7 2.7 0 1 0 0-5.4 2.7 2.7 0 0 0 0 5.4Z" />
               </svg>
             </span>
             Cómo llegar
-          </a>
+          </Button>
         </Reveal>
       </div>
     </section>
